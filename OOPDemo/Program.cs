@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using OOPDemo.Models;
 
 class Program
 {
@@ -25,5 +26,21 @@ class Program
         foreach (var p in col1) p.Print();
         foreach (var s in col2) s.Scan();
         foreach (var f in col3) f.Fax();
+
+        // === Homework: Полиморфизъм и капсулация ===
+        Console.WriteLine("\n--- Homework: Class Hierarchy ---");
+
+        List<BaseMachine> testMachines = new List<BaseMachine>
+        {
+            new AdvancedMachine { Model = "A100" },
+            new UltraMachine { Model = "U200" }
+        };
+
+        foreach (var machine in testMachines)
+        {
+            Console.WriteLine(machine.Model);
+            machine.ShowInfo();
+        }
     }
 }
+
